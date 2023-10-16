@@ -1,0 +1,33 @@
+Сделайте отскок мяча вправо и вниз
+
+///////////////////////////////////////////////////////////////////////////
+
+index.html
+<head>
+  <script src="https://en.js.cx/libs/animate.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="field">
+    <img src="https://en.js.cx/clipart/ball.svg" width="40" height="40" id="ball">
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+
+///////////////////////////////////////////////////////////////////////////
+
+style.css
+#field {
+  height: 200px;
+  border-bottom: 3px black groove;
+  position: relative;
+}
+
+#ball {
+  position: absolute;
+  cursor: pointer;
+}
+

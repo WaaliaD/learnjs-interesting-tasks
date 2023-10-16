@@ -1,0 +1,52 @@
+Напишите функцию showCircle(cx, cy, radius), которая будет рисовать постепенно растущий круг.
+
+cx,cy – координаты центра круга относительно окна браузера,
+radius – радиус круга.
+
+Теперь предположим, что нам нужен не просто круг, а чтобы в нём было ещё и сообщение. Сообщение должно появиться после завершения анимации (круг полностью вырос), в противном случае это будет выглядеть некрасиво.
+
+В решении задачи функция showCircle(cx, cy, radius) рисует окружность, но не даёт возможности отследить, когда она будет готова.
+
+В аргументы добавьте колбэк: showCircle(cx, cy, radius, callback) который будет вызываться по завершении анимации. Колбэк в качестве аргумента должен получить круг <div>.
+
+Вот пример:
+
+showCircle(150, 150, 100, div => {
+  div.classList.add('message-ball');
+  div.append("Hello, world!");
+});
+
+///////////////////////////////////////////////////////////////////////////
+
+index.html
+<head>
+  <meta charset="utf-8">
+  <style>
+    .message-ball {
+      font-size: 20px;
+      line-height: 200px;
+      text-align: center;
+    }
+
+    .circle {
+      transition-property: width, height;
+      transition-duration: 2s;
+      position: fixed;
+      transform: translateX(-50%) translateY(-50%);
+      background-color: red;
+      border-radius: 50%;
+
+      width: 0;
+      height: 0;
+      top: 150px;
+      left: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">showCircle(150, 150, 100, callback)</button>
+  <div class="circle"></div>
+
+  <script src="25.2.4.js"></script>
+</body>

@@ -1,0 +1,96 @@
+На самом деле такого задания не было, но в коментариях к разделу "Генерация пользовательских событий" я увидел интересное 
+замечание, касательно того, что неплохо было бы добавить сюда задачку, и весьма интересную идею для этой задачи:
+
+"Тема интересная, но в чем сложность было сделать задания для закрепления?
+Почитав комментарии , нашел хороший варик практики от юзера EvilYou
+Дополнение к заданию из прошлой главы "Галерея изображений"
+(Создайте галерею изображений, в которой основное изображение изменяется при клике на уменьшенный вариант)
+
+task 1
+Создайте пользовательское событие, что бы каждую секунду выбиралась случайная картинка в "Галерея изображений"
+task 2
+Создайте пользовательское событие, что бы каждую секунду последовательно показывалась картинка в "Галерея изображений""
+
+Задача показалась весьма забавной, и, я не уверен что правильно ее понял, тем не менее:
+
+///////////////////////////////////////////////////////////////////////////
+
+styles.css
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font: 75%/120% sans-serif;
+}
+
+#largeImg {
+    border: solid 1px #ccc;
+    width: 550px;
+    height: 400px;
+    padding: 5px;
+}
+
+#thumbs a {
+    border: solid 1px #ccc;
+    width: 100px;
+    height: 100px;
+    padding: 3px;
+    margin: 2px;
+    float: left;
+}
+
+#thumbs a:hover {
+    border-color: #FF9900;
+}
+
+#thumbs li {
+    list-style: none;
+}
+
+#thumbs {
+    margin: 0;
+    padding: 0;
+}
+
+#random,
+#circle {
+    width: 560px;
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+index.html
+<body>
+
+<p><img id="largeImg" src="https://en.js.cx/gallery/img1-lg.jpg" alt="Large image"></p>
+
+<ul id="thumbs">
+    <!-- браузер показывает небольшую встроенную подсказку из атрибута "title" при наведении курсора на текст -->
+    <li>
+        <a href="https://en.js.cx/gallery/img2-lg.jpg" title="Image 2"><img
+                src="https://en.js.cx/gallery/img2-thumb.jpg"></a>
+    </li>
+    <li>
+        <a href="https://en.js.cx/gallery/img3-lg.jpg" title="Image 3"><img
+                src="https://en.js.cx/gallery/img3-thumb.jpg"></a>
+    </li>
+    <li>
+        <a href="https://en.js.cx/gallery/img4-lg.jpg" title="Image 4"><img
+                src="https://en.js.cx/gallery/img4-thumb.jpg"></a>
+    </li>
+    <li>
+        <a href="https://en.js.cx/gallery/img5-lg.jpg" title="Image 5"><img
+                src="https://en.js.cx/gallery/img5-thumb.jpg"></a>
+    </li>
+    <li>
+        <a href="https://en.js.cx/gallery/img6-lg.jpg" title="Image 6"><img
+                src="https://en.js.cx/gallery/img6-thumb.jpg"></a>
+    </li>
+</ul>
+
+<button id="random">Кнопка случайности</button>
+<button id="circle">Кнопка цикла</button>
+
+<script src="main.js"></script>
+</body>

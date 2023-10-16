@@ -1,0 +1,101 @@
+Создайте «Карусель» –- ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+
+В дальнейшем к ней можно будет добавить анимацию, динамическую подгрузку и другие возможности.
+
+P.S. В этой задаче разработка структуры HTML/CSS составляет 90% решения.
+
+
+///////////////////////////////////////////////////////////////////////////
+
+styles.css 
+* {
+    background: #d5d5d5;
+}
+
+.arrow {
+    padding: 0;
+    background: #ddd;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 24px;
+    line-height: 24px;
+    color: #444;
+    display: block;
+}
+
+.arrow:focus {
+    outline: none;
+}
+
+.arrow:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+ul {
+    position: relative;
+    height: 130px;
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    transition: 1s all;
+    right: 0;
+}
+
+ul img {
+    background: white;
+    width: 130px;
+    height: 130px;
+    display: block; /* убираем пустое место вокруг картинок */
+}
+
+ul li {
+    display: inline-block; /* убираем пустое место между элементами списка */
+}
+
+.block {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 430px;
+    background: white;
+    padding: 10px;
+    border: solid 2px gray;
+    border-radius: 20px;
+}
+
+.smile {
+    position: relative;
+    width: 520px;
+    overflow: hidden;
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+index.html
+<body>
+
+<div class="block">
+    <button id="left" class="arrow">⇦</button>
+    <div class="smile">
+        <ul>
+            <li><img src="https://ru.js.cx/carousel/1.png"></li>
+            <li><img src="https://ru.js.cx/carousel/2.png"></li>
+            <li><img src="https://ru.js.cx/carousel/3.png"></li>
+            <li><img src="https://ru.js.cx/carousel/4.png"></li>
+            <li><img src="https://ru.js.cx/carousel/5.png"></li>
+            <li><img src="https://ru.js.cx/carousel/6.png"></li>
+            <li><img src="https://ru.js.cx/carousel/7.png"></li>
+            <li><img src="https://ru.js.cx/carousel/8.png"></li>
+            <li><img src="https://ru.js.cx/carousel/9.png"></li>
+            <li><img src="https://ru.js.cx/carousel/10.png"></li>
+        </ul>
+    </div>
+    <button id="right" class="arrow">⇨</button>
+</div>
+
+<script src="main.js"></script>
+
+</body>
